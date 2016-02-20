@@ -11,7 +11,7 @@ RUN mkdir /opt/perl-5.20.2 && \
 RUN ln -s /opt/perl-5.20.2 /opt/perl5
 WORKDIR /root
 RUN wget https://cpan.metacpan.org/authors/id/S/SH/SHAY/perl-5.20.3.tar.bz2 &&\
-    tar -zxf perl-5.20.3.tar.gz && rm perl-5.20.3.tar.gz &&\
+    tar -jxf perl-5.20.3.tar.bz2 && rm perl-5.20.3.tar.bz2 &&\
     cd /root/perl-5.20.3 && ./Configure -des -Dprefix=/opt/perl-5.20.2 && \
     make && make test && make install && rm -rf /root/perl-5.20.3
 RUN cd /root; curl -L https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm | /opt/perl5/bin/perl - --self-upgrade
