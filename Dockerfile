@@ -10,7 +10,6 @@ RUN mkdir /opt/perl-5.20.2 && \
     mkdir /opt/perl-5.20.2/man
 RUN ln -s /opt/perl-5.20.2 /opt/perl5
 WORKDIR /root
-# are there at least https urls I can use
 RUN wget https://cpan.metacpan.org/authors/id/S/SH/SHAY/perl-5.20.3.tar.bz2 &&\
     tar -zxf perl-5.20.3.tar.gz && rm perl-5.20.3.tar.gz &&\
     cd /root/perl-5.20.3 && ./Configure -des -Dprefix=/opt/perl-5.20.2 && \
